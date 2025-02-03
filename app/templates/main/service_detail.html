@@ -11,13 +11,13 @@
     <div class="container mt-5">
         <div class="row align-items-center">
             <!-- Image Section -->
-            <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                 <div class="service-image-container">
-                    <img src="{{ url_for('static', filename=service.image_url) }}" alt="{{ service.title }}" class="img-fluid rounded">
+                    <img src="{{ url_for('static', filename=service.image_url) }}" alt="{{ service.title }}" class="img-fluid rounded shadow-lg" aria-label="Service image for {{ service.title }}">
                 </div>
             </div>
             <!-- Content Section -->
-            <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+            <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
                 <h1 class="service-title text-center">{{ service.title }}</h1>
                 <p class="service-description">
                     {{ service.description }}
@@ -25,11 +25,14 @@
                 <p class="service-more-info">
                     {{ service.more_info }}
                 </p>
-                <a href="{{ url_for('main.services') }}" class="btn btn-primary btn-lg mt-4">Back </a>
-                <a href="{{ url_for('main.request_service', service_id=service.id) }}" class="btn btn-success btn-lg mt-4">
-                    Request Service
-                </a>
-                
+                <div class="text-center">
+                    <a href="{{ url_for('main.services') }}" class="btn btn-outline-primary btn-lg mt-4">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                    <a href="{{ url_for('main.request_service', service_id=service.id) }}" class="btn btn-success btn-lg mt-4">
+                        <i class="fas fa-check-circle"></i> Request Service
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -43,7 +46,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +57,7 @@
 
 .spinner {
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #007bff;
+    border-top: 5px solid #28a745;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -68,15 +71,14 @@
 
 /* Service Detail Page */
 .service-detail {
-  
     padding-top: 80px;
     padding-bottom: 80px;
-    
+    background: #f8f9fa;
 }
 
 .service-title {
-    font-weight: 600;
-    font-size: 1.6rem;
+    font-weight: 700;
+    font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -106,25 +108,42 @@
     transform: scale(1.05);
 }
 
-.btn-primary {
+.btn-primary,
+.btn-outline-primary {
     font-weight: 600;
     border-radius: 25px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
+.btn-outline-primary:hover {
     background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-success {
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 12px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .service-title {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .service-description {
         font-size: 1.1rem;
+    }
+
+    .service-image-container img {
+        max-width: 100%;
     }
 }
 </style>
@@ -139,13 +158,16 @@
 
     // Initialize AOS (Animate On Scroll)
     document.addEventListener('DOMContentLoaded', function () {
-        AOS.init();
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out'
+        });
     });
 </script>
 
 <!-- Include AOS Animation Stylesheet -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 {% endblock %}
