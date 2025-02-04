@@ -62,6 +62,14 @@
     </script>
     <style>
    /* General Styles */
+
+   :root {
+            --primary-color: #0A2463;
+            --secondary-color: #3E92CC;
+            --accent-color: #FF595E;
+            --dark-color: #1E1E24;
+            --light-color: #FBFFF1;
+        }
 body {
     background-color: #e3f2fd;
     font-family: 'Montserrat', sans-serif;
@@ -76,14 +84,14 @@ html {
 
 /* Navbar */
 .navbar {
-    background-color: #070707;
+    background-color: #7d8183;
     transition: background-color 0.3s, box-shadow 0.3s;
     padding: 0.2rem 1rem;
 }
 
 /* Navbar scrolled state */
 .navbar.scrolled {
-    background-color: #cf5029 !important;
+    background-color: #c4bdba !important;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -112,8 +120,8 @@ html {
 /* Logo on smaller screens */
 @media (max-width: 768px) {
     .brand-logo {
-        height: 50px; /* Adjust height for smaller screens */
-        padding-left: 30px; /* Adjust padding for smaller screens */
+        height: 30px; /* Adjust height for smaller screens */
+        padding-left: 10px; /* Adjust padding for smaller screens */
     }
 }
 
@@ -142,6 +150,41 @@ html {
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
 }
+
+ /* Scroll Progress Indicator */
+ .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent-color);
+            z-index: 9998;
+            transition: width 0.3s ease-out;
+        }
+
+
+  /* Back to Top Button */
+  .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
 
 /* Navbar scrolled state for toggler */
 .navbar.scrolled .hamburger span {
@@ -190,12 +233,14 @@ html {
 }
 
 .navbar.scrolled .nav-link {
-    color: #e6cece !important;
-}
-.nav-link {
-    color: #e6cece !important;
+    color: #ffffff !important;
 }
 
+
+.nav-link {
+    color: #e6cece !important;
+    font-weight: 600;
+}
 .nav-link:hover {
     color: #a8949d !important;
     transform: translateY(-2px);
@@ -205,7 +250,7 @@ html {
 .contact-info {
     font-size: 1rem;
     font-weight: 600;
-    color: #2d5e21;
+    color: #ffffff;
     margin-left: 20px;
 }
 
@@ -227,45 +272,50 @@ html {
 
 /* Footer Styles */
 footer {
-    background-color: #cf5029;
-    color: #fff;
-    padding: 20px 0;
-}
+            background: var(--dark-color);
+            color: var(--light-color);
+            margin-top: auto;
+        }
 
-footer .footer-links a {
-    color: #fff;
-    margin-right: 15px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            position: relative;
+        }
 
-footer .footer-links a:hover {
-    color: #ffd700;
-}
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
 
-footer .social-icons a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
-}
-
-footer .social-icons a:hover {
-    color: #ffd700;
-}
-
-footer small {
-    font-size: 0.85rem;
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-}
+        .footer-links a:hover::after {
+            width: 100%;
+        }
 
     </style>
 </head>
 
 <body>
+
+ <!-- Preloader -->
+ <div class="preloader">
+    <div class="spinner"></div>
+</div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" style="width: 0%;"></div>
+
+<!-- Back to Top -->
+<div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -321,21 +371,40 @@ footer small {
     </div>
 
      <!-- Footer -->
-     <footer>
-        <div class="container text-center">
-            <div class="row justify-content-between">
-                <div class="col-md-6 footer-links">
-                    <a href="{{ url_for('main.privacy_policy') }}">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+     <footer class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Innovating Security Solutions</h5>
+                    <p class="text-muted">Pioneering advanced surveillance and fleet management systems since 2012</p>
                 </div>
-                <div class="col-md-6 social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                <div class="col-lg-4 footer-links">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <div class="d-flex flex-column">
+                        <a href="{{ url_for('main.services') }}" class="mb-2">Our Services</a>
+                        <a href="{{ url_for('main.about_us') }}" class="mb-2">About Us</a>
+                        <a href="{{ url_for('main.contact') }}" class="mb-2">Contact Support</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Connect With Us</h5>
+                    <div class="social-icons d-flex">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <small>&copy; 2024 David’s Satellite Limited. All Rights Reserved.</small>
+            <hr class="my-5">
+            <div class="text-center">
+                <small class="text-muted">&copy; 2024 David's Satellite Limited. All rights reserved. <span class="mx-2">|</span> ISO 9001 Certified</small>
+            </div>
         </div>
     </footer>
 
@@ -352,7 +421,44 @@ footer small {
                 navbar.classList.remove('scrolled');
             }
         });
+
+       
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => preloader.style.display = 'none', 500);
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        // Back to Top
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
+
+
+   
 </body>
 
 </html>
