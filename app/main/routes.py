@@ -350,7 +350,7 @@ clients_data = {
     'client3': {
         'name': 'PowerGas',
         'description': '',
-        'image_url': 'clients/powergas.jpeg',
+        'image_url': 'clients/samsutech.jpeg',
     },
     
     
