@@ -361,7 +361,7 @@ clients_data = {
 partners_data = {
     'partner1': {
         'name': 'Partner 1',
-        'logo_url': 'partners/kedatrack.jpeg',
+        'logo_url': 'partners/keda.jpg',
     },
    
     'partner2': {
@@ -382,7 +382,7 @@ partners_data = {
     },
     'partner5': {
         'name': 'Partner 5',
-        'logo_url': 'partners/kedatrack.jpeg',
+        'logo_url': 'partners/keda.jpg',
     },
     'partner6': {
         'name': 'Partner 6',
