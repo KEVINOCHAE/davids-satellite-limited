@@ -255,14 +255,19 @@
     margin-bottom: 30px;
     text-align: left;
 }
+.cta-buttons {
+    display: flex; /* Use Flexbox to align buttons horizontally */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 15px; /* Replace margin-right with gap for consistent spacing */
+}
 
 .cta-buttons .btn {
     padding: 15px 30px;
     font-weight: 600;
     border-radius: 40px;
     text-transform: uppercase;
-    margin-right: 15px;
     transition: all 0.4s ease;
+    margin-right: 0; /* Remove margin-right since gap handles spacing */
 }
 
 .btn-primary {
