@@ -343,15 +343,16 @@ clients_data = {
         'image_url': 'clients/davis.jpeg',
     },
     'client2': {
-        'name': 'brookfox',
+        'name': 'musty',
         'description': '',
-        'image_url': 'clients/brookfox.jpeg',
+        'image_url': 'clients/musty.jpeg',
     },
     'client3': {
         'name': 'PowerGas',
         'description': '',
         'image_url': 'clients/powergas.jpeg',
     },
+    
     
 }
 
@@ -360,8 +361,9 @@ clients_data = {
 partners_data = {
     'partner1': {
         'name': 'Partner 1',
-        'logo_url': 'partners/multichoice.jpeg',
+        'logo_url': 'partners/kedatrack.jpeg',
     },
+   
     'partner2': {
         'name': 'Partner 2',
         'logo_url': 'partners/melta.jpeg',
@@ -377,6 +379,10 @@ partners_data = {
     'partner5': {
         'name': 'Partner 5',
         'logo_url': 'partners/eljunga.jpeg',
+    },
+    'partner5': {
+        'name': 'Partner 5',
+        'logo_url': 'partners/kedatrack.jpeg',
     },
     'partner6': {
         'name': 'Partner 6',
@@ -400,21 +406,21 @@ def chunk_partners(partners, chunk_size=4):
 
 testimonials_data = [
     {
-        "quote": "Kedatrack transformed our fleet management. Highly recommend!",
+        "quote": "David's Satellite Limited transformed our fleet management. Highly recommend!",
         "name": "Nicholas Kikuvi",
-        "position": "Transport Manager-Davies Express Lt",
+        "position": "Transport Manager-Davies Express Ltd",
         "icon_color": "text-primary",
     },
     {
         "quote": "Exceptional service and innovative solutions.",
-        "name": "Albert Muchai",
-        "position": "Managing Director- Chev Energies Ltd.",
+        "name": "Jadish Patel",
+        "position": "Managing Director- Samsutech Energies Ltd.",
         "icon_color": "text-success",
     },
     {
         "quote": "Reliable, efficient, and user-friendly.",
-        "name": "Philemon Langat",
-        "position": "Logistics Manager - Brookfox Enterprise Ltd.",
+        "name": "Kevin Ochae",
+        "position": "Director - Kedatrack Ltd.",
         "icon_color": "text-warning",
     },
 ]
