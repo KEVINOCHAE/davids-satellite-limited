@@ -188,7 +188,7 @@
         <div class="row align-items-center">
             <!-- Left Column: Image & Text Content -->
             <div class="col-lg-6 order-lg-1 order-2 text-column">
-                <h2 class="section-title">Our Vision, Our Mission</h2>
+                <h2 class="section-title">About Us</h2>
                 <p class="section-subtitle">Innovating fleet management to empower your business</p>
                 <p class="section-description">
                     We're not just a service provider – we're your strategic partner, dedicated to creating cutting-edge fleet solutions that streamline operations, increase safety, and elevate your business success. With a unique approach, we blend technology, data, and expertise to lead your fleet into the future.
@@ -532,128 +532,179 @@
 </style>
 
 
-
-    <div class="container-fluid text-center mt-3">
-        <h4 class="section-title text-center mb-5">Our Mission, Vision & Values</h4>
+<div class="mission-vision-values">
+    <div class="overlay"></div>
+    <div class="container text-center py-5">
+        <h2 class="section-title">Our Mission, Vision & Values</h2>
+        <p class="section-subtitle">Driving innovation and excellence in everything we do.</p>
         
-        <div class="row justify-content-center">
-            <div class="col-md-3">
-                <div class="info-card" data-aos="fade-up" data-aos-duration="700">
+        <div class="row justify-content-center g-4">
+            <!-- Mission Card -->
+            <div class="col-md-4 col-lg-3">
+                <div class="info-card">
                     <div class="icon-container">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h5 class="info-title">Mission</h5>
+                    <h3 class="info-title">Mission</h3>
                     <p class="info-text">
                         Empowering clients with cutting-edge fleet management solutions to drive efficiency and growth.
                     </p>
+                    <div class="card-overlay"></div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="info-card" data-aos="fade-up" data-aos-duration="900">
+
+            <!-- Vision Card -->
+            <div class="col-md-4 col-lg-3">
+                <div class="info-card">
                     <div class="icon-container">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h5 class="info-title">Vision</h5>
+                    <h3 class="info-title">Vision</h3>
                     <p class="info-text">
                         To be the leading global partner in intelligent fleet monitoring, enhancing operational efficiency.
                     </p>
+                    <div class="card-overlay"></div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="info-card" data-aos="fade-up" data-aos-duration="1100">
+
+            <!-- Values Card -->
+            <div class="col-md-4 col-lg-3">
+                <div class="info-card">
                     <div class="icon-container">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h5 class="info-title">Values</h5>
+                    <h3 class="info-title">Values</h3>
                     <p class="info-text">
                         Integrity, Respect, Flexibility, and Accountability—our guiding principles for excellence.
                     </p>
+                    <div class="card-overlay"></div>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 
 <!-- Custom Styling -->
 <style>
-    .mission-vision-values {
-        background: #f3f4f6;
-        padding: 60px 0;
+/* General Styles */
+.mission-vision-values {
+    background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+    position: relative;
+    padding: 100px 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(52, 152, 219, 0.8));
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    opacity: 0.9;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.icon-container {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .icon-container {
+    transform: rotate(360deg);
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.info-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.info-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
     }
 
-    .section-title {
-        
-        font-weight: 600;
-        color: #2c3e50;
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-        
-        margin-bottom: 3rem;
+    .section-subtitle {
+        font-size: 1rem;
     }
 
     .info-card {
-        background: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-    }
-
-    .info-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        padding: 20px;
     }
 
     .icon-container {
-        background: #3498db;
-        color: #fff;
-        padding: 15px;
-        border-radius: 50%;
         font-size: 30px;
-        margin-bottom: 15px;
-        transition: background-color 0.3s ease;
-    }
-
-    .icon-container i {
-        transition: transform 0.3s ease;
-    }
-
-    .info-card:hover .icon-container {
-        background: #2ecc71;
-    }
-
-    .info-card:hover i {
-        transform: rotate(360deg);
     }
 
     .info-title {
-        
-        font-weight: 500;
-        color: #333;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        text-transform: uppercase;
+        font-size: 1.3rem;
     }
 
     .info-text {
-        
-        color: hwb(0 0% 100%);
-        font-size: 1.3rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
     }
-
-    /* AOS Animations */
-    [data-aos] {
-        opacity: 0;
-        transform: translate3d(0, 50px, 0);
-        transition: all 0.5s ease-in-out;
-    }
-
-    [data-aos].aos-animate {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+}
 </style>
 
 <!-- AOS Script -->
@@ -662,50 +713,56 @@
     AOS.init();
 </script>
 
-
-<section class="py-5" >
+<section class="py-5 bg-light-gradient">
     <div class="container">
-        <h2 class="fw-bold text-center mb-5" style="font-family: 'Poppins', sans-serif; color: #343a40;">
+        <h2 class="fw-bold text-center mb-5 display-4" style="font-family: 'Poppins', sans-serif; color: #343a40;">
             Our Clients & Projects
         </h2>
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
             {% for key, client in clients_data.items() %}
-            <div class="col-md-4 col-sm-6">
-                <div class="client-box position-relative rounded shadow-sm overflow-hidden">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="client-card position-relative rounded-4 overflow-hidden shadow-lg">
                     <!-- Use url_for to get the correct static URL for the image -->
-                    <img src="{{ url_for('static', filename=client.image_url) }}" alt="{{ client.name }}" class="img-fluid w-100">
-                    <div class="client-overlay d-flex align-items-center justify-content-center">
-                        <div class="text-center px-3">
-                            <h5 class="text-white fw-bold mb-2">{{ client.name }}</h5>
-                            <p class="text-white-50 small">{{ client.description }}</p>
+                    <img src="{{ url_for('static', filename=client.image_url) }}" alt="{{ client.name }}" class="img-fluid w-100 client-image">
+                    <div class="client-overlay d-flex flex-column align-items-center justify-content-center p-4">
+                        <div class="text-center">
+                            <h5 class="text-white fw-bold mb-3">{{ client.name }}</h5>
+                            <p class="text-white-50 mb-4">{{ client.description }}</p>
+                            <a href="#" class="btn btn-outline-light btn-sm">View Project</a>
                         </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-       
     </div>
 </section>
 
-<!-- CSS for Clients Section -->
+<!-- CSS for Revamped Clients Section -->
 <style>
-    .client-box {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .bg-light-gradient {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
 
-    .client-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    .client-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        overflow: hidden;
+        border: none;
+        background: #fff;
     }
 
-    .client-box img {
-        transition: transform 0.3s ease;
+    .client-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .client-image {
+        transition: transform 0.4s ease;
         border-radius: 8px;
     }
 
-    .client-box:hover img {
-        transform: scale(1.1);
+    .client-card:hover .client-image {
+        transform: scale(1.15);
     }
 
     .client-overlay {
@@ -714,13 +771,16 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.4s ease;
         border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .client-box:hover .client-overlay {
+    .client-card:hover .client-overlay {
         opacity: 1;
     }
 
@@ -728,19 +788,36 @@
         font-family: 'Poppins', sans-serif;
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-size: 1.5rem;
+    }
+
+    .client-overlay p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .btn-outline-light {
+        border: 2px solid #fff;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+        background: #fff;
+        color: #000;
     }
 
     @media (max-width: 768px) {
-        .client-box {
+        .client-card {
             margin-bottom: 1.5rem;
         }
 
         .client-overlay h5 {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
 
         .client-overlay p {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
         }
     }
 </style>
