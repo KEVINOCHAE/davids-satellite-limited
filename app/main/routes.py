@@ -13,11 +13,11 @@ main_bp = Blueprint('main', __name__)
 def login_required_with_message(view):
     """Custom decorator that requires user login with a flash message."""
     @wraps(view)
-    def decorated_view(*args, **kwargs):
+    def decorated_view(*args, kwargs):
         if not current_user.is_authenticated:
             flash('Please log in to access this feature.', 'warning')
             return redirect(url_for('auth.login')) 
-        return view(*args, **kwargs)
+        return view(*args, kwargs)
     return decorated_view
 
 
@@ -153,7 +153,7 @@ services_data = {
         'id': 'fleet_management',
         'title': 'Advanced Fleet Management/Assets Tracking Solutions',
         'description': (
-            'Kedatrack GPS is a device-agnostic vehicle tracking solution that provides real-time and historical '
+            'Davids satelite GPS is a device-agnostic vehicle tracking solution that provides real-time and historical '
             'views of vehicle movement and usage through mobile and web-based applications.'
         ),
         'image_url': 'services/fleet_monitoring.jpeg',
@@ -161,15 +161,15 @@ services_data = {
         'more_info': (
             'The solution comprises a device-agnostic platform that integrates tracking devices and sensors from all major '
             'manufacturers in the world.\n\n'
-            '### Salient features of Kedatrack GPS:\n'
-            '- **Real-Time Tracking & History Playback**:\n'
+            '### Salient features of Davids satelite GPS:\n'
+            '- Real-Time Tracking & History Playback:\n'
             '  - Standard reports\n'
             '  - Geozone customization\n\n'
-            '- **Last Mile Delivery Management System**:\n'
+            '- Last Mile Delivery Management System:\n'
             '  - Order dispatch automation & monitoring\n'
             '  - Route management\n'
             '  - Fleet maintenance\n\n'
-            '- **Additional Features**:\n'
+            '- Additional Features:\n'
             '  - 24/7 live vehicle tracking\n'
             '  - Instant notifications/alarms via email, SMS, or app notifications\n'
             '  - Data analysis and flexible custom reporting\n'
@@ -177,7 +177,7 @@ services_data = {
             '  - Engine immobilization through mobile apps or SMS\n'
             '  - SOS panic buttons and optional voice monitoring\n\n'
             'Comprehensive fleet management reports include fuel utilization, parking reports, speed monitoring, '
-            'driver performance analysis, and more. Kedatrack GPS empowers fleet managers to enhance operations, '
+            'driver performance analysis, and more. Davids satelite GPS empowers fleet managers to enhance operations, '
             'reduce costs, and improve security.'
         )
     },
@@ -185,13 +185,13 @@ services_data = {
         'id': 'fuel_monitoring_solutions',
         'title': 'Advanced Fuel Monitoring Solutions',
         'description': (
-            'Kedatrack Fuel Monitoring System is a highly accurate solution designed to eliminate fuel-related '
+            'Davids satelite Fuel Monitoring System is a highly accurate solution designed to eliminate fuel-related '
             'expenses caused by theft or dishonesty.'
         ),
         'image_url': 'services/fuel_monitoring.jpeg',
         'detailed_description': 'Detailed information about fuel monitoring solutions...',
         'more_info': (
-            'Kedatrack FUEL Monitoring System offers:\n'
+            'Davids satelite FUEL Monitoring System offers:\n'
             '- Real-time fuel level monitoring\n'
             '- Detailed fuel consumption statistics\n'
             '- Notifications for fuel fills and theft incidents\n'
@@ -245,16 +245,7 @@ services_data = {
             '- Access control systems setup and upgrades\n'
             '- Comprehensive repair and security infrastructure solutions'
         )
-    },
-    'software_development': {
-        'id': 'software_development',
-        'title': 'Software Development',
-        'description': (
-            'Custom software solutions tailored to your business needs, from web development to mobile apps.'
-        ),
-        'image_url': 'services/sotware_dev.jpg',
-        'detailed_description': 'Detailed information about software development...',
-        'more_info': 'Our expert developers create innovative software to solve your unique business challenges.'
+    
     },
     'aerial_and_satellite_installation_solutions': {
         'id': 'aerial_and_satellite_installation_solutions',
@@ -267,42 +258,7 @@ services_data = {
             '- Quick and efficient repair services\n'
             '- Full range of high-quality equipment and upgrades'
         )
-    },
-    'it_support': {
-        'id': 'it_support',
-        'title': 'IT Support and Consultation',
-        'description': (
-            'Comprehensive IT support services to improve efficiency and manage technological infrastructure.'
-        ),
-        'image_url': 'services/it_support.avif',
-        'detailed_description': 'Detailed information about IT support...',
-        'more_info': (
-            'We offer end-to-end IT support, helping you solve technical issues, enhance performance, and ensure system stability.'
-        )
-    },
-    'cloud_services': {
-        'id': 'cloud_services',
-        'title': 'Cloud Solutions',
-        'description': (
-            'Seamless cloud services to help businesses scale, manage data, and enhance security on the cloud.'
-        ),
-        'image_url': 'services/cloud.jpg',
-        'detailed_description': 'Detailed information about cloud services...',
-        'more_info': (
-            'Our cloud solutions include secure data storage, scalable architectures, and high-availability services tailored to your business needs.'
-        )
-    },
-    'data_analytics': {
-        'id': 'data_analytics',
-        'title': 'Data Analytics',
-        'description': (
-            'Advanced data analysis tools to help businesses make data-driven decisions and improve performance.'
-        ),
-        'image_url': 'services/data_analytics.jpg',
-        'detailed_description': 'Detailed information about data analytics...',
-        'more_info': (
-            'Our analytics tools provide actionable insights, empowering businesses to identify trends and optimize strategies effectively.'
-        )
+  
     },
     'general_merchandise_supplies_services': {
         'id': 'general_merchandise_supplies_services',
@@ -420,7 +376,7 @@ testimonials_data = [
     {
         "quote": "Reliable, efficient, and user-friendly.",
         "name": "Kevin Ochae",
-        "position": "Director - Kedatrack Ltd.",
+        "position": "Director - Davids satelite Ltd.",
         "icon_color": "text-warning",
     },
 ]
