@@ -156,12 +156,12 @@ services_data = {
             'Davids satelite GPS is a device-agnostic vehicle tracking solution that provides real-time and historical '
             'views of vehicle movement and usage through mobile and web-based applications.'
         ),
-        'image_url': 'services/fleet_monitoring.jpeg',
+        'image_url': '/services/home-cover.jpeg',
         'detailed_description': 'Detailed information about fleet management solutions...',
         'more_info': (
             'The solution comprises a device-agnostic platform that integrates tracking devices and sensors from all major '
             'manufacturers in the world.\n\n'
-            '### Salient features of Davids satelite GPS:\n'
+            ' Salient features of Davids satelite GPS:\n'
             '- Real-Time Tracking & History Playback:\n'
             '  - Standard reports\n'
             '  - Geozone customization\n\n'
@@ -376,7 +376,7 @@ testimonials_data = [
     {
         "quote": "Reliable, efficient, and user-friendly.",
         "name": "Kevin Ochae",
-        "position": "Director - Davids satelite Ltd.",
+        "position": "Director - Kedatrack Ltd.",
         "icon_color": "text-warning",
     },
 ]
