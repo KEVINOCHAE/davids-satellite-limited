@@ -1,202 +1,358 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Secure Authentication Portal{% endblock %}
 
 {% block content %}
-<!-- Page Loader -->
-<div id="loader" class="page-loader">
-    <div class="spinner"></div>
-</div>
+<div class="cyber-login">
+    <!-- Holographic Scanner Effect -->
+    <div class="scan-line"></div>
+    
+    <!-- Main Login Container -->
+    <div class="auth-container">
+        <!-- Biometric Header -->
+        <div class="bio-header">
+            <div class="retina-scan"></div>
+            <h1 class="cyber-title">
+                <span class="cyber-glitch">Login
+            </h1>
+        </div>
 
-<!-- Login Section -->
-<div class="container login-section mt-5" data-aos="fade-in">
-    <h2 class="text-center mb-4">Welcome Back</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow-lg p-4">
-                <div class="card-body">
-                    <form method="POST" action="{{ url_for('auth.login') }}">
-                        {{ form.hidden_tag() }}
-                        
-                        <div class="form-group mb-4">
-                            {{ form.email.label(class="form-label") }}
-                            <div class="input-wrapper">
-                                <i class="fas fa-envelope input-icon"></i>
-                                {{ form.email(class="form-control", placeholder="Email Address") }}
-                            </div>
-                            {% if form.email.errors %}
-                                <div class="text-danger mt-1">{{ form.email.errors[0] }}</div>
-                            {% endif %}
-                        </div>
-
-                        <div class="form-group mb-4">
-                            {{ form.password.label(class="form-label") }}
-                            <div class="input-wrapper">
-                                <i class="fas fa-lock input-icon"></i>
-                                {{ form.password(class="form-control", placeholder="Password") }}
-                            </div>
-                            {% if form.password.errors %}
-                                <div class="text-danger mt-1">{{ form.password.errors[0] }}</div>
-                            {% endif %}
-                        </div>
-
-                        <div class="form-group">
-                            {{ form.submit(class="btn btn-tech btn-block btn-lg") }}
-                        </div>
-                    </form>
-                    <div class="text-center mt-3">
-                        <p>Don't have an account? <a href="{{ url_for('auth.register') }}" class="text-primary">Register here</a></p>
-                       
+        <!-- Login Form -->
+        <form method="POST" action="{{ url_for('auth.login') }}" class="quantum-form">
+            {{ form.hidden_tag() }}
+            
+            <!-- Input Matrix -->
+            <div class="input-matrix">
+                <!-- Email Field -->
+                <div class="cyber-input">
+                    {{ form.email.label(class="crypto-label") }}
+                    <div class="input-wrapper">
+                        {{ form.email(placeholder="user@davidsatnet.com") }}
+                        <div class="input-trail"></div>
+                        <i class="fas fa-user-secret"></i>
                     </div>
+                    {% if form.email.errors %}
+                    <div class="crypto-error">{{ form.email.errors[0] }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Password Field -->
+                <div class="cyber-input">
+                    {{ form.password.label(class="crypto-label") }}
+                    <div class="input-wrapper">
+                        {{ form.password(placeholder="••••••••") }}
+                        <div class="input-trail"></div>
+                        <i class="fas fa-key"></i>
+                    </div>
+                    {% if form.password.errors %}
+                    <div class="crypto-error">{{ form.password.errors[0] }}</div>
+                    {% endif %}
                 </div>
             </div>
+
+            <!-- Security Interface -->
+            <div class="security-console">
+                <div class="encryption-status">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>AES-256 Encryption Active</span>
+                </div>
+                <button type="submit" class="neuro-button">
+                    LOGIN
+                    <div class="button-hover"></div>
+                </button>
+            </div>
+        </form>
+
+        <!-- Alternative Access -->
+        <div class="cyber-links">
+            <a href="{{ url_for('auth.register') }}" class="hologram-link">
+                <i class="fas fa-user-plus"></i>
+                Sign up
+            </a>
+           
+        </div>
+    </div>
+
+    <!-- Threat Detection System -->
+    <div class="threat-monitor">
+        <div class="threat-status">
+            <i class="fas fa-skull-crossbones"></i>
+            <span>0 ACTIVE THREATS DETECTED</span>
         </div>
     </div>
 </div>
 
-<!-- Styles -->
 <style>
-    /* Page Loader */
-    .page-loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.9);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        opacity: 1;
-        transition: opacity 1s ease-out;
-    }
+:root {
+    --neon-primary: #0ff;
+    --cyber-purple: #bc00ff;
+    --matrix-green: #0f0;
+    --interface-black: #00010a;
+}
 
-    .spinner {
-        border: 5px solid #f3f3f3;
-        border-top: 5px solid #007bff;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: spin 1s linear infinite;
-    }
+/* Cyber Background */
+.cyber-login {
+    background: radial-gradient(ellipse at center, 
+        rgba(11,11,25,1) 0%, 
+        rgba(0,1,10,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
 
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+.scan-line {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--matrix-green) 50%,
+        transparent 100%
+    );
+    animation: scan 4s linear infinite;
+    z-index: 0;
+}
 
-    /* Login Section */
-    .login-section {
-        
-        border-radius: 12px;
-        padding: 50px 15px;
-    }
+@keyframes scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
 
-    h2 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-    }
+/* Auth Container */
+.auth-container {
+    background: rgba(15, 15, 30, 0.95);
+    border: 1px solid var(--neon-primary);
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+    padding: 3rem;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
 
-    .card {
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
+.bio-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
 
-    /* Input Wrapper */
-    .input-wrapper {
-        position: relative;
-    }
+.retina-scan {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, 
+        var(--neon-primary) 0%, 
+        transparent 70%);
+    margin: 0 auto 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
 
-    .input-icon {
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translateY(-50%);
-        color: #007bff;
-        font-size: 18px;
-    }
+@keyframes pulse {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0.2; }
+}
 
-    .form-control {
-        padding-left: 40px;
-        border-radius: 8px;
-        height: 45px;
-        font-size: 1rem;
-    }
+.cyber-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0,255,255,0.5);
+}
 
-    .form-label {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        margin-bottom: 5px;
-    }
+.cyber-glitch {
+    animation: glitch 2s infinite;
+}
 
-    /* Buttons */
-    .btn-tech {
-        background: linear-gradient(45deg, #007bff, #0056b3);
-        color: #fff;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.1rem;
-        transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
+@keyframes glitch {
+    0% { text-shadow: 2px 2px var(--cyber-purple); }
+    95% { text-shadow: 2px 2px var(--cyber-purple); }
+    96% { text-shadow: -3px 1px var(--cyber-purple); }
+    97% { text-shadow: 1px -2px var(--matrix-green); }
+    98% { text-shadow: -1px 3px var(--cyber-purple); }
+    100% { text-shadow: 2px 2px var(--cyber-purple); }
+}
 
-    .btn-tech:hover {
-        transform: translateY(-3px);
-        box-shadow: 0px 10px 15px rgba(0, 123, 255, 0.3);
-    }
+/* Quantum Form */
+.quantum-form {
+    margin-top: 2rem;
+}
 
-    /* Error Messages */
-    .text-danger {
-        font-size: 0.9rem;
-        font-weight: 500;
-    }
+.input-matrix {
+    display: grid;
+    gap: 2rem;
+}
 
-    /* Links */
-    .text-primary {
-        font-weight: 600;
-        color: #007bff !important;
-        transition: color 0.3s ease;
-    }
+.cyber-input {
+    position: relative;
+}
 
-    .text-primary:hover {
-        color: #0056b3 !important;
-        text-decoration: none;
-    }
+.crypto-label {
+    display: block;
+    color: var(--neon-primary);
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
 
-    .text-secondary {
-        color: #6c757d !important;
-        font-size: 0.9rem;
-    }
+.input-wrapper {
+    position: relative;
+}
 
-    /* Animations */
-    [data-aos="fade-in"] {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s ease-out;
-    }
+.cyber-input input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--neon-primary);
+    color: var(--matrix-green);
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
 
-    [data-aos="fade-in"].aos-animate {
-        opacity: 1;
-        transform: translateY(0);
+.cyber-input input:focus {
+    box-shadow: 0 0 15px var(--neon-primary);
+    background: rgba(0,255,255,0.02);
+}
+
+.input-trail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--matrix-green);
+    transition: width 0.3s ease;
+}
+
+.cyber-input input:focus ~ .input-trail {
+    width: 100%;
+}
+
+.cyber-input i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--neon-primary);
+}
+
+/* Security Console */
+.security-console {
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0,255,255,0.2);
+    padding-top: 2rem;
+}
+
+.encryption-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--matrix-green);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Neuro Button */
+.neuro-button {
+    background: linear-gradient(45deg, 
+        var(--neon-primary) 0%, 
+        var(--cyber-purple) 100%);
+    border: none;
+    padding: 1.2rem 2rem;
+    color: var(--interface-black);
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.neuro-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,255,255,0.3);
+}
+
+.button-hover {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255,255,255,0.1) 50%,
+        transparent 100%
+    );
+    animation: hoverEffect 3s infinite;
+}
+
+@keyframes hoverEffect {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Threat Monitor */
+.threat-monitor {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: rgba(255,0,0,0.1);
+    padding: 0.5rem 1rem;
+    border-left: 3px solid #ff0000;
+}
+
+.threat-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ff0000;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 2rem;
+        padding: 2rem;
     }
+    
+    .cyber-title {
+        font-size: 1.5rem;
+    }
+    
+    .retina-scan {
+        width: 80px;
+        height: 80px;
+    }
+}
 </style>
 
-<!-- AOS and Loader Script -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // AOS Animation
-        const elements = document.querySelectorAll('[data-aos="fade-in"]');
-        elements.forEach(el => {
-            el.classList.add('aos-animate');
+document.addEventListener('DOMContentLoaded', () => {
+    // Input Animation
+    document.querySelectorAll('.cyber-input input').forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.querySelector('.input-trail').style.width = '100%';
         });
-
-        // Page Loader
-        const loader = document.getElementById('loader');
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 1000);
+        input.addEventListener('blur', function() {
+            if (!this.value) {
+                this.parentElement.querySelector('.input-trail').style.width = '0';
+            }
+        });
     });
+
+    // Threat Simulation
+    setInterval(() => {
+        const threat = document.querySelector('.threat-status');
+        threat.style.opacity = threat.style.opacity === '0.5' ? '1' : '0.5';
+    }, 2000);
+});
 </script>
 {% endblock %}
