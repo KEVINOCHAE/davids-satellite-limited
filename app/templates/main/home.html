@@ -53,7 +53,7 @@
 <style>
 .hero-section {
     min-height: 90vh;
-    background: url('static/services/fleet_monitoring.jpeg') no-repeat center center/cover;
+    background: url('static/services/home-cover.jpeg') no-repeat center center/cover;
     color: #fff;
     display: flex;
     align-items: center;
@@ -980,113 +980,270 @@
     AOS.init();
 </script>
 
-<section class="py-5 bg-light-gradient">
-    <div class="container">
-        <h2 class="fw-bold text-center mb-5 display-4" style="font-family: 'Poppins', sans-serif; color: #343a40;">
-            Our Clients & Projects
-        </h2>
-        <div class="row g-4 justify-content-center">
+<section class="client-showcase">
+    <div class="cyber-container">
+        <h2 class="section-glitch" >Trusted Collaborations</h2>
+        
+        <div class="client-grid">
             {% for key, client in clients_data.items() %}
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="client-card position-relative rounded-4 overflow-hidden shadow-lg">
-                    <!-- Use url_for to get the correct static URL for the image -->
-                    <img src="{{ url_for('static', filename=client.image_url) }}" alt="{{ client.name }}" class="img-fluid w-100 client-image">
-                    <div class="client-overlay d-flex flex-column align-items-center justify-content-center p-4">
-                        <div class="text-center">
-                            <h5 class="text-white fw-bold mb-3">{{ client.name }}</h5>
-                            <p class="text-white-50 mb-4">{{ client.description }}</p>
-                            <a href="#" class="btn btn-outline-light btn-sm">View Project</a>
+            <div class="client-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="{{ url_for('static', filename=client.image_url) }}" 
+                             alt="{{ client.name }}" 
+                             class="client-logo"
+                             loading="lazy">
+                        <div class="holographic-overlay"></div>
+                    </div>
+                    <div class="card-back">
+                        <div class="cyber-content">
+                            <div class="client-meta">
+                                <span class="client-id">CLIENT_0{{ loop.index }}</span>
+                                <h3 class="client-name">{{ client.name }}</h3>
+                                <div class="client-sector">{{ client.sector }}</div>
+                            </div>
+                            <p class="client-description">{{ client.description }}</p>
+                            <div class="client-stats">
+                                <div class="stat">
+                                    <div class="stat-value">{{ client.projects }}</div>
+                                    <div class="stat-label">Projects</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">{{ client.years }}</div>
+                                    <div class="stat-label">Years</div>
+                                </div>
+                            </div>
+                            <a href="#" class="cyber-button">
+                                Case Study
+                                <span class="button-hover"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="card-glitch"></div>
             </div>
             {% endfor %}
         </div>
     </div>
 </section>
 
-<!-- CSS for Revamped Clients Section -->
 <style>
-    .bg-light-gradient {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+.client-showcase {
+    background: radial-gradient(circle at center, #0a0a1a 0%, #000010 100%);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-glitch {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f3ff;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 6rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.section-glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -2px 0 #ff00ff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch 2s infinite linear alternate-reverse;
+}
+
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    position: relative;
+}
+
+.client-card {
+    position: relative;
+    aspect-ratio: 1;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border: 2px solid rgba(0, 243, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.client-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+    background: rgba(15, 15, 30, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.holographic-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, 
+        transparent 0%, 
+        rgba(0, 243, 255, 0.1) 50%, 
+        transparent 100%);
+    animation: hologram 6s infinite linear;
+}
+
+.client-logo {
+    max-width: 80%;
+    filter: grayscale(0) brightness(2);
+    transition: filter 0.3s ease;
+    z-index: 1;
+}
+
+.client-card:hover .client-logo {
+    filter: grayscale(1) brightness(1);
+}
+
+.card-back {
+    background: rgba(10, 10, 20, 0.95);
+    transform: rotateY(180deg);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.cyber-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.client-meta {
+    border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.client-id {
+    font-family: 'Courier New', monospace;
+    color: #00f3ff;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.client-name {
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.client-sector {
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.client-description {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.client-stats {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    color: #00f3ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.cyber-button {
+    position: relative;
+    background: none;
+    border: 2px solid #00f3ff;
+    color: #00f3ff;
+    padding: 1rem 2rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.button-hover {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 243, 255, 0.1) 50%,
+        transparent 100%
+    );
+    transition: left 0.5s;
+}
+
+.cyber-button:hover .button-hover {
+    left: 100%;
+}
+
+@keyframes hologram {
+    0% { transform: translate(-50%, -50%); opacity: 0.2; }
+    50% { transform: translate(50%, 50%); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%); opacity: 0.2; }
+}
+
+
+@media (max-width: 768px) {
+    .section-glitch {
+        font-size: 2.5rem;
     }
-
-    .client-card {
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        overflow: hidden;
-        border: none;
-        background: #fff;
+    
+    .client-grid {
+        grid-template-columns: 1fr;
     }
-
-    .client-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    
+    .client-name {
+        font-size: 1.2rem;
     }
-
-    .client-image {
-        transition: transform 0.4s ease;
-        border-radius: 8px;
-    }
-
-    .client-card:hover .client-image {
-        transform: scale(1.15);
-    }
-
-    .client-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .client-card:hover .client-overlay {
-        opacity: 1;
-    }
-
-    .client-overlay h5 {
-        font-family: 'Poppins', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 1.5rem;
-    }
-
-    .client-overlay p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-
-    .btn-outline-light {
-        border: 2px solid #fff;
-        color: #fff;
-        transition: all 0.3s ease;
-    }
-
-    .btn-outline-light:hover {
-        background: #fff;
-        color: #000;
-    }
-
-    @media (max-width: 768px) {
-        .client-card {
-            margin-bottom: 1.5rem;
-        }
-
-        .client-overlay h5 {
-            font-size: 1.2rem;
-        }
-
-        .client-overlay p {
-            font-size: 0.8rem;
-        }
-    }
+}
 </style>
 
 <section class="py-5">
