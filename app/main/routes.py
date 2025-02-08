@@ -149,6 +149,21 @@ def about_us():
 
 # dictionary for services
 services_data = {
+    'security_systems': {
+        'id': 'security_systems',
+        'title': 'Security Systems',
+        'description': (
+            'CCTV cameras, access control, and video surveillance solutions to enhance your security infrastructure.'
+        ),
+        'image_url': '/services/home-mini1.jpeg',
+        'detailed_description': 'Detailed information about security systems...',
+        'more_info': (
+            '- Professional CCTV installation and maintenance\n'
+            '- Access control systems setup and upgrades\n'
+            '- Comprehensive repair and security infrastructure solutions'
+        )
+    
+    },
     'fleet_management': {
         'id': 'fleet_management',
         'title': 'Advanced Fleet Management/Assets Tracking Solutions',
@@ -232,21 +247,7 @@ services_data = {
             'Advanced AI dashcams enable fleet managers to digitize and automate safety programs, reducing risks effectively.'
         )
     },
-    'security_systems': {
-        'id': 'security_systems',
-        'title': 'Security Systems',
-        'description': (
-            'CCTV cameras, access control, and video surveillance solutions to enhance your security infrastructure.'
-        ),
-        'image_url': 'services/security systems.jpg',
-        'detailed_description': 'Detailed information about security systems...',
-        'more_info': (
-            '- Professional CCTV installation and maintenance\n'
-            '- Access control systems setup and upgrades\n'
-            '- Comprehensive repair and security infrastructure solutions'
-        )
     
-    },
     'aerial_and_satellite_installation_solutions': {
         'id': 'aerial_and_satellite_installation_solutions',
         'title': 'Aerial & Satellite Installation Solutions',
@@ -266,7 +267,7 @@ services_data = {
         'description': (
             'Providing a wide range of product supply services to private and public sectors.'
         ),
-        'image_url': 'services/about.jpeg',
+        'image_url': 'services/machandise.jpg',
         'detailed_description': 'Detailed information about merchandise supplies...',
         'more_info': (
             'We supply IT hardware, office furniture, staff uniforms, and more. '
