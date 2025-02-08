@@ -203,7 +203,7 @@ services_data = {
             'Davids satelite Fuel Monitoring System is a highly accurate solution designed to eliminate fuel-related '
             'expenses caused by theft or dishonesty.'
         ),
-        'image_url': 'services/fuel_monitoring.jpeg',
+        'image_url': 'services/fuel_monitoring_level.jpeg',
         'detailed_description': 'Detailed information about fuel monitoring solutions...',
         'more_info': (
             'Davids satelite FUEL Monitoring System offers:\n'
@@ -237,7 +237,7 @@ services_data = {
         'description': (
             'Video telematics combines sensors and AI-powered dashcams to enhance driver safety and fleet management.'
         ),
-        'image_url': 'services/video_telematics.jpeg',
+        'image_url': 'services/ai_video_telematics.jpeg',
         'detailed_description': 'Detailed information about video telematics solutions...',
         'more_info': (
             'Key functions include:\n'
@@ -267,7 +267,7 @@ services_data = {
         'description': (
             'Providing a wide range of product supply services to private and public sectors.'
         ),
-        'image_url': 'services/machandise.jpg',
+        'image_url': 'services/machandiser.jpg',
         'detailed_description': 'Detailed information about merchandise supplies...',
         'more_info': (
             'We supply IT hardware, office furniture, staff uniforms, and more. '
