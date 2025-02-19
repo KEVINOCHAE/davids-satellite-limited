@@ -155,7 +155,7 @@ services_data = {
         'description': (
             'CCTV cameras, access control, and video surveillance solutions to enhance your security infrastructure.'
         ),
-        'image_url': 'static/services/wifihikvisioneasylink3.jpg',
+        'image_url': 'services/wifihikvisioneasylink3.jpg',
         'detailed_description': 'Detailed information about security systems...',
         'more_info': (
             'David’s Satellite Ltd is the leading provider of HIKVISION and DAHUA CCTV surveillance, Access Control, and Networking products and known for quality and affordability. Our advanced security technology safeguards millions of premises across the country. Our CCTV systems help to protect lives and property effectively and reduce operation expenses significantly.  Our security   platform offers a broader scale of security and a better watching of the key areas.With video analytics technology.  David’s Satellite security solution enables easy detection of criminal behaviour  that reduces the risk of wrongdoings across your premise. Our CCTV systems are well suited for  home, offices, factories, ATM ,Traffic control, and ware houses.As a CCTV cameras distributor and installer in Kenya, Nairobi we offer complete support for our customers and partners'
@@ -268,7 +268,7 @@ services_data = {
         'description': (
             'Providing a wide range of product supply services to private and public sectors.'
         ),
-        'image_url': 'static/services/davidssatelliteproducts.jpg',
+        'image_url': 'services/davidssatelliteproducts.jpg',
         'detailed_description': 'Detailed information about merchandise supplies...',
         'more_info': (
             'We supply IT Security hardware such as Hikvision and Dahua CCTV Cameras and Accessories, Access Control devices and Accessories. We also sell and Digital Tv Aerial and Satellite hardwares,Dashcams, Networking hardware Devices such as Routers, ethernet cables and more. '
