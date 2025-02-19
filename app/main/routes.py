@@ -155,9 +155,10 @@ services_data = {
         'description': (
             'CCTV cameras, access control, and video surveillance solutions to enhance your security infrastructure.'
         ),
-        'image_url': '/services/home-mini1.jpeg',
+        'image_url': '/services/Enhanced-Wi-FiHikvisioneasylink3.jpeg',
         'detailed_description': 'Detailed information about security systems...',
         'more_info': (
+            'David’s Satellite Ltd is the leading provider of HIKVISION and DAHUA CCTV surveillance, Access Control, and Networking products and known for quality and affordability. Our advanced security technology safeguards millions of premises across the country. Our CCTV systems help to protect lives and property effectively and reduce operation expenses significantly.  Our security   platform offers a broader scale of security and a better watching of the key areas.With video analytics technology.  David’s Satellite security solution enables easy detection of criminal behaviour  that reduces the risk of wrongdoings across your premise. Our CCTV systems are well suited for  home, offices, factories, ATM ,Traffic control, and ware houses.As a CCTV cameras distributor and installer in Kenya, Nairobi we offer complete support for our customers and partners'
             '- Professional CCTV installation and maintenance\n'
             '- Access control systems setup and upgrades\n'
             '- Comprehensive repair and security infrastructure solutions'
@@ -176,7 +177,7 @@ services_data = {
         'more_info': (
             'The solution comprises a device-agnostic platform that integrates tracking devices and sensors from all major '
             'manufacturers in the world.\n\n'
-            ' Salient features of Davids satelite GPS:\n'
+            ' Salient features of Davids satellite GPS:\n'
             '- Real-Time Tracking & History Playback:\n'
             '  - Standard reports\n'
             '  - Geozone customization\n\n'
@@ -192,7 +193,7 @@ services_data = {
             '  - Engine immobilization through mobile apps or SMS\n'
             '  - SOS panic buttons and optional voice monitoring\n\n'
             'Comprehensive fleet management reports include fuel utilization, parking reports, speed monitoring, '
-            'driver performance analysis, and more. Davids satelite GPS empowers fleet managers to enhance operations, '
+            'driver performance analysis, and more. Davids satellite GPS empowers fleet managers to enhance operations, '
             'reduce costs, and improve security.'
         )
     },
@@ -200,13 +201,13 @@ services_data = {
         'id': 'fuel_monitoring_solutions',
         'title': 'Advanced Fuel Monitoring Solutions',
         'description': (
-            'Davids satelite Fuel Monitoring System is a highly accurate solution designed to eliminate fuel-related '
+            'Davids satellite Fuel Monitoring System is a highly accurate solution designed to eliminate fuel-related '
             'expenses caused by theft or dishonesty.'
         ),
         'image_url': 'services/fuel_monitoring_level.jpeg',
         'detailed_description': 'Detailed information about fuel monitoring solutions...',
         'more_info': (
-            'Davids satelite FUEL Monitoring System offers:\n'
+            'Davids satellite FUEL Monitoring System offers:\n'
             '- Real-time fuel level monitoring\n'
             '- Detailed fuel consumption statistics\n'
             '- Notifications for fuel fills and theft incidents\n'
@@ -267,10 +268,10 @@ services_data = {
         'description': (
             'Providing a wide range of product supply services to private and public sectors.'
         ),
-        'image_url': 'services/machandiser.jpg',
+        'image_url': 'services/Dvids_satelliteproducts.jpg',
         'detailed_description': 'Detailed information about merchandise supplies...',
         'more_info': (
-            'We supply IT hardware, office furniture, staff uniforms, and more. '
+            'We supply IT Security hardware such as Hikvision and Dahua CCTV Cameras and Accessories, Access Control devices and Accessories. We also sell and Digital Tv Aerial and Satellite hardwares,Dashcams, Networking hardware Devices such as Routers, ethernet cables and more. '
             'Our goal is to build long-term partnerships by consistently exceeding expectations.'
         )
     }
