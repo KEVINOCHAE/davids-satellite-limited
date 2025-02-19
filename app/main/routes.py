@@ -271,7 +271,7 @@ services_data = {
         'image_url': 'services/davidssatelliteproducts.jpg',
         'detailed_description': 'Detailed information about merchandise supplies...',
         'more_info': (
-            'We supply IT Security hardware such as Hikvision and Dahua CCTV Cameras and Accessories, Access Control devices and Accessories. We also sell and Digital Tv Aerial and Satellite hardwares,Dashcams, Networking hardware Devices such as Routers, ethernet cables and more. '
+            'We supply IT Security hardware such as Hikvision and Dahua CCTV Cameras and Accessories, Access Control devices and Accessories. We also sell Tv Aerials and Satellite hardwares,Dashcams, Networking devices such as Routers, ethernet cables and more. '
             'Our goal is to build long-term partnerships by consistently exceeding expectations.'
         )
     }
